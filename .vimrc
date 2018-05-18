@@ -3,13 +3,21 @@
 
 set nocompatible
 
+set nowrap
+
+set encoding=utf8
+
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin("~/.vim/plugged")
 
-" Make sure you use single quotes
-"
-" Any valid git URL is allowed
+    " Make sure you use single quotes
+    
+    " Any valid git URL is allowed
+    
+    Plug 'tomasr/molokai'
+    Plug 'altercation/vim-colors-solarized'
+
 call plug#end()
 
 
@@ -21,9 +29,29 @@ call plug#end()
 " This needs to come AFTER the Plugin commands!
 filetype plugin indent on
 
+" Show line number
+set number
+
+set ruler
+
+" Set tab behavior
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+
+" Always display the status line
+set laststatus=2
+
+" Enable highlighting current line
+set cursorline
+
+" Set color theme
+set background=dark
+colorscheme molokai 
 
 " out <leader> will be the space key
-let mapleader=" "
+let mapleader="\<Space>"
 
 " out <localleader> will be the '-' key
 let maplocalleader="-"
