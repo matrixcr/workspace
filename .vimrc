@@ -50,6 +50,26 @@ set cursorline
 set background=dark
 colorscheme molokai 
 
+" Enable syntax highlighting
+syntax enable
+
+" Switch syntax highlighting on when the terminal has colors
+if &t_Co > 2 || has("gui_running")
+    syntax on
+endif
+
+" Ignore case when searching
+set ignorecase
+
+" Highlight search result
+set hlsearch
+
+" Highlight as I type the search string
+set incsearch
+
+" Disable highlight when <leader><leader> is pressed
+map <silent> <leader><leader> :noh<cr>
+
 " out <leader> will be the space key
 let mapleader="\<Space>"
 
@@ -80,19 +100,19 @@ nnoremap <leader>w :w!<CR>
 nmap <leader>Q :qa!<CR>
 
 " Switch sub-window
-nnoremap nw <C-W><C-W>
+noremap nw <C-W><C-W>
 
 " Jump to right sub window
-nnoremap <leader>lw <C-W>l
+noremap <leader>l <C-W>l
 
 " Jump to left sub window
-nnoremap <leader>hw <C-W>h
+noremap <leader>h <C-W>h
 
 " Jump to upper sub window
-nnoremap <leader>kw <C-W>k
+noremap <leader>k <C-W>k
 
 " Jump to lower sub window 
-nnoremap <leader>jw <C-W>j
+noremap <leader>j <C-W>j
 
 " <leader>ev load .vimrc file 
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
